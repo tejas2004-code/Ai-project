@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure lists have bullets */
+ul, ol {
+  list-style-type: disc !important;  /* Ensures bullets appear */
+  display: block !important;
+  padding-left: 1.5rem !important;
+}
+
+
+
+li {
+  display: list-item ;
+  list-style: inherit ;
+}
+
+
+
+  body{
+    font-family: "Poppins", sans-serif;
+  }
+
+ .scrollbar-hideee::-webkit-scrollbar {
+ 
+  height:8px;
+  width: 5px; 
+}
+
+.scrollbar-hideee::-webkit-scrollbar-thumb {
+  background-color: #323946; 
+  box-shadow: 10px 10px 0 #323946; 
+  border-radius: 10px;
+}
+.temp {
+  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,.1),#152041);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 6rem;
+  transition: .5s ease;
+}
+
+.rsw-ce ul {
+  list-style: disc;
+  padding-left: 2em;
+}
+
+.rsw-ce ol {
+  list-style: decimal;
+  padding-left: 2em;
+}
+.ql-toolbar.ql-snow{
+  background: white;
+  color: red;
+}
+
+.ql-container{
+  height: 114px;
+}
+
+/* Responsive style */
+/* This will be for small screen sizes (mobile-first) */
+@media (max-width: 640px) {
+ .body{
+ height: 100%;
+ overflow: hidden;
+  width: 100%;
+  position: fixed;
+  
+ }
+ .header{
+ 
+ width: 100%;
+ overflow: hidden;
+ 
+ }
+
+ .img{
+  height: 40px;
+ }
+ .input-box{
+  width: 20rem;
+  padding-left: 35px;
+ }
+ .submit-btn{
+width: 20rem;
+ }
+ .icon{
+ position: absolute;
+margin-right: 21rem;
+ }
+ .model{
+  width: 90%;
+  margin: 15px;
+ }
+ .model-text{
+  font-size: 15px;
+ }
+ .title{
+  display: flex;
+  font-size:1.3rem;
+  width: 400px;
+  gap: 8px;
+  margin-left: 30px;
+ }
+ 
+ 
+ .form{
+  width: 90%;
+  overflow: hidden;
+ }
+}
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%; 
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%; 
+  } 
+}
+@layer base {
+  * {
+    @apply border-border; 
+  }
+  body {
+    @apply bg-background text-foreground; 
+  } 
+}
+
+
+
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+  background: #ddd;
+  border-radius: 34px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toggle-slider:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.toggle-text {
+  position: absolute;
+  top: 50%;
+  left: 70px;
+  transform: translateY(-50%);
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.toggle-input:checked + .toggle-slider {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+.toggle-input:checked ~ .toggle-text {
+  color: #4facfe;
+  font-weight: 700;
+}
+
+/* Hover effects */
+.toggle-switch:hover .toggle-slider {
+  transform: scale(1.05);
+}
+
+.toggle-switch:hover .toggle-slider:before {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Active state */
+.toggle-input:active + .toggle-slider:before {
+  width: 30px;
+}
+
+/* Focus state */
+.toggle-input:focus-visible + .toggle-slider {
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.3);
+}
+
+/* Optional glow effect */
+.toggle-input:checked + .toggle-slider {
+  box-shadow: 0 0 15px rgba(79, 172, 254, 0.4);
+}
+@media print {
+  @page {
+    size: auto;
+    margin:0mm }
+
+  .resume-section {
+    break-inside: avoid;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .page-break {
+    display: block;
+    page-break-before: always;
+  }
+
+  .print-hide {
+    display: none !important;
+  }
+}
